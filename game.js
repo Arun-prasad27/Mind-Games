@@ -8,18 +8,23 @@ var started = false;
 
 var level = 0;
 
-$(document).keypress(function(){
+function startGame() {
     if(!started){
         $("#level-title").text("Level " + level);
         nextSequence();
         started = true;
     }
+}
+
+// Desktop start: keypress listener (for keybords)
+$(document).keypress(function(){
+    startGame();
 });
 
-//Desktop start kepress handler
-$(document).keypress(function() {
-    
-})
+// Mobile start: Click/Touch listener on the Title/Start button
+$("#level-title").on("click touchstart", function(){
+    startGame();
+});
 
 $(".btn").click(function(){
     var userChosenColour = $(this).attr("id");
