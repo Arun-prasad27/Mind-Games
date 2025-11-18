@@ -28,10 +28,7 @@ $("#level-title").on("click touchstart", function(event){
     startGame();
 });
 
-$(".btn").on("click touchstart", function(event){
-    if(started) {
-        event.stopPropagation();
-
+$(".btn").click(function(){
         var userChosenColour = $(this).attr("id");
         userClickedPattern.push(userChosenColour);
 
@@ -39,7 +36,6 @@ $(".btn").on("click touchstart", function(event){
         animatePress(userChosenColour);
 
         checkAnswer(userClickedPattern.length-1)
-    }
 });
 
 function checkAnswer(currentLevel){
