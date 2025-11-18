@@ -80,9 +80,8 @@ function nextSequence(){
 }
 
 function playSound(name){
-    console.log("Playing sounf for:" + name);
-    /*var audio = new Audio("sounds/" + name + ".mp3");
-    audio.play();*/
+    var audio = new Audio("sounds/" + name + ".mp3");
+    audio.play();
 }
 
 function animatePress(currentColor){
