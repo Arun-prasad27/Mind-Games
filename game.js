@@ -22,18 +22,24 @@ $(document).keypress(function(){
 });
 
 // Mobile start: Click/Touch listener on the Title/Start button
-$("#level-title").on("click touchstart", function(){
+$("#level-title").on("click touchstart", function(event){
+    // Prevent default touch behaviour
+    event.preventDefault();
     startGame();
 });
 
-$(".btn").click(function(){
-    var userChosenColour = $(this).attr("id");
-    userClickedPattern.push(userChosenColour);
+$(".btn").on("click touchstart", function(event){
+    if(started) {
+        event.stopPropagation();
 
-    playSound(userChosenColour);
-    animatePress(userChosenColour);
+        var userChosenColour = $(this).attr("id");
+        userClickedPattern.push(userChosenColour);
 
-    checkAnswer(userClickedPattern.length-1)
+        playSound(userChosenColour);
+        animatePress(userChosenColour);
+
+        checkAnswer(userClickedPattern.length-1)
+    }
 });
 
 function checkAnswer(currentLevel){
@@ -57,7 +63,7 @@ function checkAnswer(currentLevel){
             $("body").removeClass("game-over");
         }, 200);
 
-        $("#level-title").text("Game Over, Press Any Key to Restart");
+        $("#level-title").text("Game Over, Tap to Restart");
 
         startOver();
     }
