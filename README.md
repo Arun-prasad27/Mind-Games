@@ -1,10 +1,7 @@
 
 ---
 
-# Mind Games README
-
-```markdown
-# Mind Games (Memory Game)
+# Mind Games
 
 An interactive browser-based memory game where players repeat an increasingly complex sequence of colors.
 The project demonstrates JavaScript event handling, DOM manipulation, and dynamic game logic.
