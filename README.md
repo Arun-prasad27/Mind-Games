@@ -1,7 +1,7 @@
 
 ---
 
-# 2️⃣ Mind Games README
+# Mind Games README
 
 Use this for the **memory game project**.
 
