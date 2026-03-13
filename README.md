@@ -3,8 +3,6 @@
 
 # Mind Games README
 
-Use this for the **memory game project**.
-
 ```markdown
 # Mind Games (Memory Game)
 
